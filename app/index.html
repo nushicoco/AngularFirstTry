@@ -1,29 +1,26 @@
 <!doctype html>
-<html ng-app id="ng-app">
+<html >
   <head>
   	<link rel="stylesheet" href="css/app.css">
   	<link rel="stylesheet" href="css/bootstrap.css">
   </head>
-  <body>
-  	<div ng-view></div>
-    <div ng-controller="SmallKnowiiCntl">
-     <table ng-repeat="knowii in knowiis" border="1">   	<!--  <table ng-repeat = "{{knowii in knowiis}}" border="1">    -->
+  <body ng-app="myKnowiiApp">
+    <div ng-controller="SmallKnowiiCtrl">
+        <h4>Search:</h4><input type="text" ng-model="search">
+        <knowli></knowli>
+        <table ng-repeat="knowii in knowiis | filter:search | orderBy:'Date'" border="1">   	<!--  <table ng-repeat = "{{knowii in knowiis}}" border="1">    -->
     		<tr>
     			<td style="vertical-align:top">
     				<table>
     					<tr>
-    						<td> <i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star-empty"></i>
-    							<i class="icon-star-empty"></i>
+    						<td> <i  ng-repeat="n in [] | range:knowii.Raiting" class="icon-star"></i><i ng-repeat="n in [] | range:5 - knowii.Raiting"class="icon-star-empty"></i> 
     						</td>    					
     						<td class="span2"> <strong> {{knowii.PublisherName}} | {{knowii.Date}}</strong></td>    						
     						<td><i class="icon-tags"></i></td>
     					</tr>
     					<tr>
     						<td class="span3" colspan="2" style="text-align:right">
-    							Craftsy Workshops are tutorials from amazing designers that include the pattern, instructions, and step-by-step photos. And, the BEST part: you'll never get stuck...just ask the pattern designer for help!
+    							{{knowii.Previewtxt}}
     						</td>
     					</tr>    					
     					<tr>

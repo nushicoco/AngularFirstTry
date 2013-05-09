@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Simple Layout Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery-layout.css">
+	<link rel="stylesheet" type="text/css" href="css/layout-default-latest.css" />
+	<link rel="stylesheet" type="text/css" href="css/themes/base/jquery.ui.all.css" />
+</head>
+<body ng-app="myKnowiiApp">
+
+<!-- manually attach allowOverflow method to pane -->
+<div class="ui-layout-north" onmouseover="myLayout.allowOverflow('north')" onmouseout="myLayout.resetOverflow(this)">
+	This is the north pane, closable, slidable and resizable
+
+	<ul>
+		<li>
+			<ul>
+				<li>one</li>
+				<li>two</li>
+				<li>three</li>
+				<li>four</li>
+				<li>five</li>
+			</ul>
+			Drop-Down <!-- put this below so IE and FF render the same! -->
+		</li>
+	</ul>
+	<knowli> </knowli>
+</div>
+
+<!-- allowOverflow auto-attached by option: west__showOverflowOnHover = true -->
+<!--div class="ui-layout-west">
+	This is the west pane, closable, slidable and resizable
+
+	<ul>
+		<li>
+			<ul>
+				<li>one</li>
+				<li>two</li>
+				<li>three</li>
+				<li>four</li>
+				<li>five</li>
+			</ul>
+			Pop-Up <!-- put this below so IE and FF render the same! -->
+		<!--/li>
+	</ul>
+
+	<p><button onclick="myLayout.close('west')">Close Me</button></p>
+
+</div -->
+
+<!--div class="ui-layout-south">
+	This is the south pane, closable, slidable and resizable &nbsp;
+	<button onclick="myLayout.toggle('north')">Toggle North Pane</button>
+</div-->
+
+<div class="ui-layout-east">
+	This is the east pane, closable, slidable and resizable
+
+	<!-- attach allowOverflow method to this specific element -->
+	<ul onmouseover="myLayout.allowOverflow(this)" onmouseout="myLayout.resetOverflow('east')">
+		<li>
+			<ul>
+				<li>one</li>
+				<li>two</li>
+				<li>three</li>
+				<li>four</li>
+				<li>five</li>
+			</ul>
+			Pop-Up <!-- put this below so IE and FF render the same! -->
+		</li>
+	</ul>
+
+	<p><button onclick="myLayout.close('east')">Close Me</button></p>
+
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+</div>
+
+<div id="tabs-center"class="ui-layout-center no-scrollbar add-padding grey" >
+	<!--This center pane auto-sizes to fit the space <i>between</i> the 'border-panes'
+	<p>This layout was created with only <b>default options</b> - no customization</p>
+	<p>Only the <b>applyDefaultStyles</b> option was enabled for <i>basic</i> formatting</p>
+	<p>The Pop-Up and Drop-Down lists demonstrate the <b>allowOverflow()</b> utility</p>
+	<p>The Close and Toggle buttons are examples of <b>custom buttons</b></p>
+	<p><a href="http://layout.jquery-dev.net/demos.html">Go to the Demos page</a></p>
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+	<p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p-->
+
+	<!-- center Tabs layout -->
+	<ul class="ui-layout-north no-scrollbar allow-overflow">
+		<li><a href="#tab-panel-center-1">Public</a></li>
+		<li><a href="#tab-panel-center-2">Private</a></li>
+		<li><a href="#tab-panel-center-3">+</a></li>
+	</ul>
+	<div class="ui-layout-center ui-widget-content add-scrollbar" style="border-top: 0;" direction="rtl">
+		<div id="tab-panel-center-1" class="outline">
+			<b>Public Tabs inside a nested-layout</b>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Vestibulum condimentum neque a velit laoreet dapibus.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+		</div>
+		<div id="tab-panel-center-2" class="outline">
+			<b>Private Tabs inside a nested-layout</b>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Vestibulum condimentum neque a velit laoreet dapibus.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+		</div>
+		<div id="tab-panel-center-3" class="outline">
+			<b>+ Tabs inside a nested-layout</b>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Vestibulum condimentum neque a velit laoreet dapibus.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+			<p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+		</div>
+	</div>
+</div>
+	
+	<script src="lib/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    <!--script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.all.js"></script>
+	<script type="text/javascript" src="js/jquery.layout.js"></script-->
+
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script> 
+	<script type="text/javascript" src="js/jquery-ui.js"></script> 
+	<script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+	<script type="text/javascript" src="js/themeswitchertool.js"></script> 
+
+	<!-- load the Tabs & Accordions callbacks so we can use them below-->
+	<script type="text/javascript" src="js/jquery.layout.resizeTabLayout.js"></script>
+	<script type="text/javascript" src="js/jquery.layout.resizePaneAccordions.js"></script>
+    
+	<script type="text/javascript">
+
+	var myLayout; // a var is required because this page utilizes: myLayout.allowOverflow() method
+
+	$(document).ready(function () {
+		myLayout = $('body').layout({
+			// enable showOverflow on west-pane so popups will overlap north pane
+			west__showOverflowOnHover: true
+		,   resizeWhileDragging: false 
+		,   north__resizeWhileDragging: false 
+		,   north__resizable:  false
+		,   north__closable:   false
+		//,	west__fxSettings_open: { easing: "easeOutBounce", duration: 750 }
+		});
+
+		// OUTER/PAGE LAYOUT
+		pageLayout = $("body").layout({ // DO NOT use "var pageLayout" here
+			west__size:			.30 
+		,	east__size:			.30 
+		,	south__initClosed:	true
+		,	north__initClosed:	true
+		,	west__onresize:		$.layout.callbacks.resizePaneAccordions // west accordion a child of pane
+		,	east__onresize:		$.layout.callbacks.resizePaneAccordions // east accordion nested inside a tab-panel
+		}); 
+
+		// TABS IN CENTER-PANE
+		// create tabs before wrapper-layout so elems are correct size before creating layout
+		pageLayout.panes.center.tabs({
+			activate:			$.layout.callbacks.resizeTabLayout // tab2-accordion is wrapped in a layout
+		});
+
+		// WRAPPER-LAYOUT FOR TABS/TAB-PANELS, INSIDE OUTER-CENTER PANE
+		pageLayout.panes.center.layout({
+			closable:			false
+		,	resizable:			false
+		,	spacing_open:		0
+		,	center__onresize:	$.layout.callbacks.resizeTabLayout // tabs/panels are wrapped with an inner-layout
+		});
+
+		// LAYOUT TO CONTAIN HEADER+ACCORDION, INSIDE A TAB, INSIDE OUTER-CENTER PANE
+		/*$("#tab-panel-center-2").layout({
+			center__onresize:	$.layout.callbacks.resizePaneAccordions // accordion is inside center-pane
+		,	resizeWithWindow:	false	// resizing is handled by callbacks to ensure the correct resizing sequence
+		,	triggerEventsOnLoad: true	// force resize of accordion when layout inits - ie, becomes visible 1st time
+		});*/
+
+		// TABS INSIDE EAST-PANE
+		pageLayout.panes.east.tabs({
+			activate:			$.layout.callbacks.resizePaneAccordions // resize tab2-accordion when tab is activated
+		});
+		pageLayout.sizeContent("east"); // resize pane-content-elements after creating east-tabs
+
+		// INIT ALL ACCORDIONS - EVEN THOSE NOT VISIBLE
+		$("#accordion-west")	.accordion({ heightStyle: "fill" });
+		$("#accordion-center")	.accordion({ heightStyle: "fill" });
+		$("#accordion-east")	.accordion({ heightStyle: "fill" });
+
+
+ 	});
+
+	</script>
+</body>
+</html>
